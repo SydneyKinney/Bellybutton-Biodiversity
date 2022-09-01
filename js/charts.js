@@ -71,7 +71,7 @@ function buildCharts(sample) {
     var ids = results.otu_ids
     var labels = results.otu_labels;
     var sv = results.sample_values;
-  
+
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
@@ -123,7 +123,7 @@ function buildCharts(sample) {
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
       title: "Bacteria Cultures Per Sample",
-      margin: {t: 0},
+      margin: { t: 0 },
       xaxis: { title: "OTU ID" },
       showlegend: false,
       hovermode: "closest",
@@ -135,26 +135,31 @@ function buildCharts(sample) {
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", [bubbleData], bubbleLayout);
 
-    var gaugeData = 
-      {
-        domain: { x: [0, 1], y: [0, 1] },
-        value: frequency,
-        title: { text: "Belly Button Washing Frequency<br>Scrubs per Week" },
-        type: "indicator",
-        mode: "gauge+number",
-        gauge: {
-          axis: {range:[null,10]},
-          bar: {color: "black"},
-          steps: [
-            {range: [0,2], color: "yellow"}
+    var gaugeData =
+    {
+      domain: { x: [0, 1], y: [0, 1] },
+      value: frequency,
+      title: { text: "Belly Button Washing Frequency<br>Scrubs per Week" },
+      type: "indicator",
+      mode: "gauge+number",
+      gauge: {
+        axis: { range: [null, 10] },
+        bar: { color: "black" },
+        steps: [
+          { range: [0, 2], color: "red" },
+          { range: [2, 4], color: "orange" },
+          { range: [4, 6], color: "yellow" },
+          { range: [6, 8], color: "lightgreen" },
+          { range: [8, 10], color: "green" },
 
-          ]
+
+        ]
 
 
 
-        }
       }
-    ;
+    }
+      ;
 
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
@@ -164,30 +169,30 @@ function buildCharts(sample) {
 
   });
 
-      // Create a variable that holds the samples array. 
+  // Create a variable that holds the samples array. 
 
-      // Create a variable that filters the samples for the object with the desired sample number.
+  // Create a variable that filters the samples for the object with the desired sample number.
 
-      // 1. Create a variable that filters the metadata array for the object with the desired sample number.
+  // 1. Create a variable that filters the metadata array for the object with the desired sample number.
 
-      // Create a variable that holds the first sample in the array.
-
-
-      // 2. Create a variable that holds the first sample in the metadata array.
+  // Create a variable that holds the first sample in the array.
 
 
-      // Create variables that hold the otu_ids, otu_labels, and sample_values.
+  // 2. Create a variable that holds the first sample in the metadata array.
 
 
-      // 3. Create a variable that holds the washing frequency.
-
-      // Create the yticks for the bar chart.
+  // Create variables that hold the otu_ids, otu_labels, and sample_values.
 
 
-      // 4. Create the trace for the gauge chart.
-      
-   
-  
+  // 3. Create a variable that holds the washing frequency.
+
+  // Create the yticks for the bar chart.
+
+
+  // 4. Create the trace for the gauge chart.
+
+
+
 
 
 
